@@ -26,16 +26,18 @@
             transition: transform 0.5s ease; /* Transição suave */
         }
         .container img {
+            display: block; /*Impede que a imagem herde o alinhamento do texto.*/
+            margin: 0 auto; /*Centraliza a imagem horizontalmente.*/
             border-radius: 10%;
-            width: 250px;
+            width: 320px;
             height: 250px;
             object-fit: cover;
-            margin-bottom: 20px;
+            margin-bottom: 0px;
         }
         .container img:hover {
             transform: scale(1.5); /* Efeito de zoom */
         }
-        h1 {
+        h1, h2 {
             text-align: center;
             color: #444;
         }
@@ -44,7 +46,7 @@
             width: 500px;
             height: 360px;
             object-fit: cover;
-            margin-bottom: 20px;
+            margin-bottom: 0px;
         }
     </style>
 </head>
@@ -52,21 +54,21 @@
     <div class="container">
         <h1>Quem sou eu...</h1>
         <p>Olá! Seja muito bem vindo.</p>
-        <p>Me chamo Mateus, sou cristão, graduado no Centro de Treinamento Bíblico Rhema, Escola de Missões Rhema e Escola de Ministros Rhema.</p>
-        <img src="imagens/rhema.jpg" alt="Rhema">
-        <img src="imagens/missoes.jpg" alt="Missoes">
-        <img src="imagens/ministros.jpg" alt="Ministros">
+        <p>Me chamo Mateus Amorim Marques.</p>
+        <img src="imagens/eu-midia.jpg" alt="eu-midia">
+        <p>Sou Cristão, graduado no Centro de Treinamento Biblico Rhema.</p>
         <p>Graduado em <b>Ciência de Dados</b> pela Universidade Cruzeiro do Sul, com habilidades na criação de bancos de dados, análise de dados, modelagem de bancos de dados, web scraping...</p>
         <p>Cursando <b>Engenharia de Software</b> na Universidade Cruzeiro do Sul, com habilidades na criação de sites interativos, paginas de cadastro...</p>
         <p>Pyton, SQL, R, Html, Css, JavaScript, PHP, PowerBI...</p>
-        <h2>Diploma</h2>
+        <h2>Diplomas</h2>
         <h3>Ciência de Dados</h3>
-        <embed id="diploma" src="pdfs/Diploma.pdf" type="application/pdf">
+        <embed id="diploma" src="pdfs/Diploma.pdf" type="application/pdf"></p>
         <a href="pdfs/Diploma.pdf" target="_blank">Visualizar Diploma</a>
         <h2>Currículo</h2>
-        <embed id="curriculo" src="pdfs/curriculo.pdf" type="application/pdf">
+        <embed id="curriculo" src="pdfs/curriculo.pdf" type="application/pdf"></p>
         <a href="pdfs/curriculo.pdf" target="_blank">Visualizar Currículo</a>
         <p>No meu <a href="https://mateusamorimmarques.blogspot.com/" target="_blank">Blogger</a> e <a href="https://github.com/MateusAmorim" target="_blank">GitHub</a> você pode encontrar mais sobre minhas habilidades e alguns projetos já desenvolvidos.</p>
+        <p>E-mail: <a href="mailto:mateusamorimtec@gmail.com">mateusamorimtec@gmail.com</a></p>
     </div>
 </body>
 </html>
