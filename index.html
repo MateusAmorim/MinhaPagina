@@ -1,73 +1,228 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="icon" href="imagens/4.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mateus Amorim - Desenvolvedor de Software e Web. Conheça meu trabalho, projetos e habilidades em desenvolvimento de software, web design e programação.">
     <title>Mateus Amorim</title>
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <style>
+        /* ============================================
+           RESET E CONFIGURAÇÕES
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            color: #ffffff;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: url('imagens/escritorio.jpeg') no-repeat center center fixed;
             background-size: cover;
-            color: #fff;
+            filter: brightness(0.45);
+            z-index: -1;
         }
+
+        /* ============================================
+           CONTAINER PRINCIPAL
+           ============================================ */
         .container {
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 40px 50px;
+            border-radius: 20px;
+            max-width: 480px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            animation: fadeInUp 0.8s ease;
         }
-        .container h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            letter-spacing: 3px;
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .container img {
+
+        .logo {
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            width: 110px;
-            height: 160px;
             object-fit: cover;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+            border: 3px solid #00B4D8;
+            box-shadow: 0 0 30px rgba(0, 180, 216, 0.3);
+            transition: transform 0.3s;
         }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .container h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #ffffff 0%, #00B4D8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .container .tagline {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 28px;
+            letter-spacing: 1px;
+        }
+
+        .container .tagline i {
+            color: #00B4D8;
+            margin: 0 6px;
+        }
+
+        /* ============================================
+           BOTÕES
+           ============================================ */
         .buttons {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
+
         .buttons a {
             text-decoration: none;
-            color: #2d2d2d;
-            background-color: #f0f0f08e;
-            padding: 15px;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 14px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
         }
+
+        .buttons a i {
+            font-size: 1.3rem;
+        }
+
         .buttons a:hover {
-            background-color: #ff8400;
-            color: #000;
+            background: #00B4D8;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 180, 216, 0.4);
+            border-color: #00B4D8;
+        }
+
+        /* Botão destaque "Saiba Mais" */
+        .buttons .btn-primary {
+            background: #00B4D8;
+            color: #fff;
+            font-weight: 700;
+            border-color: #00B4D8;
+        }
+
+        .buttons .btn-primary:hover {
+            background: #0098b8;
+            box-shadow: 0 8px 30px rgba(0, 180, 216, 0.5);
+            transform: translateY(-3px);
+        }
+
+        /* ============================================
+           RODAPÉ
+           ============================================ */
+        .footer {
+            margin-top: 24px;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .footer span {
+            color: #00B4D8;
+        }
+
+        /* ============================================
+           RESPONSIVIDADE
+           ============================================ */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 24px;
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .container h1 {
+                font-size: 1.8rem;
+            }
+
+            .container .tagline {
+                font-size: 0.8rem;
+            }
+
+            .buttons a {
+                padding: 12px 16px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <img src="imagens/4.png" alt="Mateus Amorim" class="logo">
         <h1>Mateus Amorim</h1>
-        <img src="imagens/capa.JPG" alt="Mateus Amorim">
+        <p class="tagline">
+            <i class="bi bi-gear-fill"></i>
+            Desenvolvedor de Software e Web
+            <i class="bi bi-gear-fill"></i>
+        </p>
+
         <div class="buttons">
-            <a href="sobre-mim.html"><i class="bi bi-person-vcard navicon"></i> Sobre Mim</a>
-            <a href="https://mateusamorimtec.netlify.app/" target="_blank" rel="noopener noreferrer" ><i class="bi bi-browser-edge navicon"></i> WebSite</a>
+            <a href="https://mateusamorimtec.netlify.app/" target="_blank" rel="noopener noreferrer" ><i class="bi bi-browser-edge navicon"></i> Saiba Mais</a>
             <a href="https://www.instagram.com/mateusam0rim/" target="_blank" rel="noopener noreferrer" ><i class="bi bi-instagram navicon"></i> Instagram</a>
             <a href="https://www.linkedin.com/in/mateus-amorim-388a12203/" target="_blank" rel="noopener noreferrer" ><i class="bi bi-linkedin navicon"></i> LinkedIn</a>
             <a href="https://www.youtube.com/@mateusamorim3707" target="_blank" rel="noopener noreferrer" ><i class="bi bi-youtube navicon"></i> YouTube</a>
             <a href="https://github.com/MateusAmorim" target="_blank" rel="noopener noreferrer" ><i class="bi bi-github navicon"></i> GitHub</a>
-            <a href="https://mateusamorimmarques.blogspot.com/" target="_blank" rel="noopener noreferrer" ><i class="bi bi-bootstrap navicon"></i> Blogger</a>
+        </div>
+
+        <div class="footer">
+            © 2026 <span>Mateus Amorim</span> • Todos os direitos reservados
         </div>
     </div>
 </body>
